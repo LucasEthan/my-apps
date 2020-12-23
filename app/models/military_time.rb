@@ -1,0 +1,2 @@
+class MilitaryTime < ApplicationRecord
+end

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  military_time: 
+  12-hour_time: MyString
+
+two:
+  military_time: 
+  12-hour_time: MyString
