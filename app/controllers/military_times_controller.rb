@@ -1,4 +1,4 @@
-class MilitaryTimeController < ApplicationController
+class MilitaryTimesController < ApplicationController
   def show
   end
 
