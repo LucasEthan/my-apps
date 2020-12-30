@@ -3,5 +3,6 @@ class MilitaryTimesController < ApplicationController
   end
 
   def index
+    @military_times = MilitaryTime.all
   end
 end
