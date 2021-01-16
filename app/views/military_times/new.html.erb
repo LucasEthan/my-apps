@@ -1,0 +1,6 @@
+<%= form_with(model: @military_time, local: true) do |f| %>
+  <%= f.label :military_time %>
+  <%= f.number_field :military_time, placeholder: "1300", autofocus: true, min: 0, max: 2359 %>
+
+  <%= f.submit "Convert Time", class: "btn btn-primary" %>
+<% end %>
