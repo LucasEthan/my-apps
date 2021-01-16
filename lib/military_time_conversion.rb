@@ -7,19 +7,31 @@ class MilitaryTimeConversion
   def initialize(mil_time)
     @mil_time = mil_time.to_i
 
-    raise(ConversionError, "Military time is invalid") unless @mil_time.positive? && @mil_time < 24
+    raise(ConversionError, "Military time is invalid") if @mil_time.negative? || @mil_time >= 2400
+
+    raise(ConversionError, "Military time is invalid") if minutes >= 60
+  end
+
+  def hours
+    hours = mil_time / 100
+    standard_hours = hours % 12
+    standard_hours = 12 if standard_hours.zero?
+    standard_hours
+  end
+
+  def minutes
+    mil_time % 100
+  end
+
+  def period
+    if mil_time / 100 >= 12
+      "PM"
+    else
+      "AM"
+    end
   end
 
   def standard_time
-    standard_time = mil_time - 12 if mil_time > 12
-    if mil_time < 12 && mil_time > 0
-      puts "#{mil_time} in standard time is #{mil_time} am"
-    elsif mil_time == 12
-      puts "#{mil_time} in standard time is #{mil_time} pm"
-    elsif mil_time == 24
-      puts "#{mil_time} in standard time is #{standard_time} midnight"
-    else
-      puts "#{mil_time} in standard time is #{standard_time} pm"
-    end
+    "#{hours}:#{minutes} #{period}"
   end
 end
