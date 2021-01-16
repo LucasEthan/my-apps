@@ -1,0 +1,2 @@
+module MilitaryTimesHelper
+end

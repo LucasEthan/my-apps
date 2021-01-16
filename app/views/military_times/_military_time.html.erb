@@ -1,0 +1,9 @@
+<p>Military time: <%= military_time.military_time %></p>
+<p>Standard time: <%= military_time.standard_time %></p>
+<li>
+  <%= link_to("\u{1F5D1}", military_time, method: :delete,
+    data:{confirm: "Are you sure you want to delete this conversion?"},
+      class: "btn btn-danger") %>
+  &nbsp;
+  <%= link_to("More information", military_time )%>
+</li>
