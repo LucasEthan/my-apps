@@ -18,6 +18,16 @@ class MilitaryTimesController < ApplicationController
   end
 
   def create
+    military_time = military_time_params[:military_time]
+    standard_time = MilitaryTimeConversion.new(military_time).standard_time
+    @military_time = MilitaryTime.new(military_time: military_time, standard_time: standard_time)
+    if @military_time.save
+      flash[:success] = "Military time conversion succesfully created"
+      redirect_to @military_time
+    else
+      flash.now[:danger] = "An error occured while converting the military time. Please try again"
+      render :new
+    end
   end
 
   private

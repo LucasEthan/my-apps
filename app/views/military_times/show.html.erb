@@ -1,3 +1,6 @@
 <h1>More information</h1>
+<p><strong>Military time:</strong> <%= @military_time.military_time %></p>
+<p><strong>Standard time:</strong> <%= @military_time.standard_time %></p>
 <p><strong>Created at:</strong> <%= @military_time.created_at %></p>
 <p><strong>Updated at:</strong> <%= @military_time.updated_at %></p>
+<%= link_to "Military times", military_times_path%>

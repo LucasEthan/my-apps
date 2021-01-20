@@ -32,6 +32,6 @@ class MilitaryTimeConversion
   end
 
   def standard_time
-    "#{hours}:#{minutes} #{period}"
+    format("#{hours}:%<minutes>02d #{period}", minutes: minutes)
   end
 end
