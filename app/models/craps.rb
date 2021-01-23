@@ -1,0 +1,2 @@
+class Craps < ApplicationRecord
+end

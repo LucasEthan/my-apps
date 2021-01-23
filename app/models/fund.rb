@@ -1,2 +1,0 @@
-class Fund < ApplicationRecord
-end
