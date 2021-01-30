@@ -3,6 +3,7 @@ class CrapsController < ApplicationController
   end
 
   def index
+    @craps = Craps.all
   end
 
   def destroy
