@@ -1,5 +1,6 @@
 class CrapsController < ApplicationController
   def show
+    @craps = Craps.find(params[:id])
   end
 
   def index
